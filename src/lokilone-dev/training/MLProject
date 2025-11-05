@@ -1,0 +1,11 @@
+name: summit-experiment
+
+docker_env:
+  image: quay.io/lokilone/summit/summit-experiment:latest
+
+entry_points:
+
+    main:
+        parameters:
+            path: str
+        command: "uv -n run -m lokilone-dev.training.main --input_data_path {path}"

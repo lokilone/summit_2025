@@ -1,0 +1,27 @@
+[project]
+name = "summit"
+version = "0.1.0"
+description = "My first MLOps project"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fire>=0.7.1",
+    "scikit-learn>=1.7.2",
+]
+
+[project.scripts]
+hello = "lokilone-dev.main:main"
+api = "lokilone-dev.api.main:main"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+api = [
+    "fastapi>=0.119.0",
+    "uvicorn>=0.37.0",
+]
+training = [
+    "mlflow[extras]>=3.4.0",
+]
